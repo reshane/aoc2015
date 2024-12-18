@@ -3,6 +3,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -16,6 +17,7 @@ fn main() {
                     3 => day3::solve(),
                     4 => day4::solve(),
                     5 => day5::solve(),
+                    6 => day6::solve(),
                     _ => println!("No implementation yet"),
                 }
             } else {
@@ -28,7 +30,7 @@ fn main() {
 }
 
 pub fn solve() {
-    let contents = std::fs::read_to_string("input/6.txt").expect("WHERE IS THE FILE");
+    let contents = std::fs::read_to_string("input/7.txt").expect("WHERE IS THE FILE");
     let start = std::time::Instant::now();
     println!("part 1: {}", solve_p1(&contents));
     println!("part 1: {}", solve_p2(&contents));
@@ -41,7 +43,7 @@ fn solve_p1(_contents: &str) -> i64 {
 
 #[test]
 fn test_case_1() {
-    let contents = std::fs::read_to_string("test/6.txt").expect("WHERE IS THE FILE");
+    let contents = std::fs::read_to_string("test/7.txt").expect("WHERE IS THE FILE");
     let result = solve_p1(&contents);
     println!("{result}");
     assert!(result == 0);
@@ -53,7 +55,7 @@ fn solve_p2(_contents: &str) -> i64 {
 
 #[test]
 fn test_case_2() {
-    let contents = std::fs::read_to_string("test/6.txt").expect("WHERE IS THE FILE");
+    let contents = std::fs::read_to_string("test/7.txt").expect("WHERE IS THE FILE");
     let result = solve_p2(&contents);
     println!("{result}");
     assert!(result == 0);
